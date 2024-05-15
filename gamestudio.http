@@ -1,0 +1,68 @@
+POST http://localhost:8080/api/score
+Content-Type: application/json
+
+{
+  "game": "taptiles",
+  "player": "test",
+  "points": 100,
+  "playedOn": "2023-04-17T09:29:31.002+02:00"
+}
+
+###
+POST http://localhost:8080/api/comment
+Content-Type: application/json
+
+{
+  "game": "taptiles",
+  "player": "test",
+  "comment": "test http",
+  "commentedOn": "2023-04-17T09:29:31.002+02:00"
+}
+
+
+###
+POST http://localhost:8080/api/rating
+Content-Type: application/json
+
+{
+  "game": "taptiles",
+  "player": "test",
+  "rating": 4,
+  "ratedOn":  "2023-04-17T09:29:31.002+02:00"
+}
+
+
+###
+POST http://localhost:8080/api/rating
+Content-Type: application/json
+
+{
+  "game": "taptiles",
+  "player": "test1",
+  "rating": 2,
+  "ratedOn":  "2023-04-17T09:29:31.002+02:00"
+}
+
+###
+POST http://localhost:8080/api/rating
+Content-Type: application/json
+
+{
+  "game": "taptiles",
+  "player": "test2",
+  "rating": 3,
+  "ratedOn":  "2023-04-17T09:29:31.002+02:00"
+}
+
+###
+POST http://localhost:8080/api/rating
+Content-Type: application/json
+
+{
+  "game": "taptiles",
+  "player": "test3",
+  "rating": 4,
+  "ratedOn":  "2023-04-17T09:29:31.002+02:00"
+}
+
+

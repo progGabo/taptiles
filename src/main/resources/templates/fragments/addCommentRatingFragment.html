@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+</head>
+<body>
+<div th:fragment="addComRat">
+  <div class="commrat">
+    <form id="form" action="/taptiles/addrating" method="post">
+      <label>Add rating: </label>
+      <input type="number" name="rating" placeholder="Rating"
+             min="1" max="5">
+    </form>
+
+    <form id="form" action="/taptiles/addcomment" method="post">
+      <label>Add comment: </label>
+      <input type="text" name="comment" placeholder="Comment"
+             minlength="2" maxlength="45">
+    </form>
+  </div>
+</div>
+
+</body>
+</html>

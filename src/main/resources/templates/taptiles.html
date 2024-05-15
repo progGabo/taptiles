@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gamestudio</title>
+    <link rel="stylesheet" href="/css/stylesheet.css"/>
+    <script type="text/javascript" src="/js/tabs.js"></script>
+</head>
+
+<body>
+<header>TAPTILES
+    <div class="avgRating">
+        <span class="textt" th:text="'Average rating: '"></span>
+        <span class="textt" th:utext="${@taptilesController.getAvgRating}"></span>
+    </div>
+</header>
+<div class="gameContainer">
+    <div class="game">
+
+        <div th:replace="fragments/gameFieldFragment.html :: renderField"/>
+
+        <div th:replace="fragments/gameFieldFragment.html :: renderOptionButtons"/>
+
+    </div>
+
+    <div class="service">
+
+        <div th:replace="fragments/showServicesFragment.html:: serviceButtnons"/>
+
+        <div th:replace="fragments/showServicesFragment.html :: comments(${comments})"/>
+
+        <div th:replace="fragments/showServicesFragment.html :: ratings(${ratings})"/>
+
+        <div th:replace="fragments/showServicesFragment.html :: scores(${scores})"/>
+
+    </div>
+</div>
+
+<span th:if="${@userController.isLogged}">
+    <div th:replace="fragments/addCommentRatingFragment.html :: addComRat"></div>
+</span>
+
+</body>
+
+
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+
+<div th:fragment="serviceButtnons">
+
+  <div id="tabsDiv" class="tabs">
+    <button class="linkClass" onclick=
+            "displayContent(event, 'comments')">
+      Comments
+    </button>
+    <button class="linkClass" onclick=
+            "displayContent(event, 'rating')">
+      Rating
+    </button>
+    <button class="linkClass" onclick
+            ="displayContent(event, 'score')">
+      Score
+    </button>
+  </div>
+
+</div>
+
+
+<div th:fragment="scores(scores)">
+
+  <div id="score" class="contentClass">
+    <table class="scoreTable">
+      <tr class="tbltr">
+        <th class="tblth">Player</th>
+        <th class="tblth">Score</th>
+        <th class="tblth">Date</th>
+      </tr>
+      <li th:each="score : ${scores}">
+        <tr class="tbltr">
+          <th class="tblth" th:text="${score.player}"/>
+          <th class="tblth" th:text="${score.points}"/>
+          <th class="tblth" th:text="${score.playedOn}"/>
+        </tr>
+      </li>
+    </table>
+  </div>
+
+</div>
+
+<div th:fragment="ratings(ratings)">
+
+  <div id="rating" class="contentClass">
+    <table class="scoreTable">
+      <tr class="tbltr">
+        <th class="tblth">Player</th>
+        <th class="tblth">Rating</th>
+        <th class="tblth">Date</th>
+      </tr>
+      <li th:each="rating : ${ratings}">
+        <tr class="tbltr">
+          <th class="tblth" th:text="${rating.player}"/>
+          <th class="tblth" th:text="${rating.rating}"/>
+          <th class="tblth" th:text="${rating.ratedOn}"/>
+        </tr>
+      </li>
+    </table>
+  </div>
+
+</div>
+
+
+<div th:fragment="comments(comments)">
+
+  <div id="comments" class="contentClass">
+    <table class="scoreTable">
+      <tr class="tbltr">
+        <th class="tblth">Player</th>
+        <th class="tblthComment">Comment</th>
+        <th class="tblth">Date</th>
+      </tr>
+      <li th:each="comment : ${comments}">
+        <tr class="tbltr">
+          <th class="tblth" th:text="${comment.player}"/>
+          <th class="tblthComment" th:text="${comment.comment}"/>
+          <th class="tblth" th:text="${comment.commentedOn}"/>
+        </tr>
+      </li>
+    </table>
+  </div>
+
+</div>
+
+
+</body>
+</html>
